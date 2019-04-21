@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {webSocket} from 'rxjs/webSocket';
-import {SerialBall} from './components'
+import {SerialConfig} from './components'
 import logo from './logo.svg';
 import './App.css';
 
@@ -15,7 +15,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <SerialBall ws$={ws$} dev='COM3' sig='cd' wait={0}/>
+          <SerialConfig ws$={ws$} dev='COM3' sig='cd'/>
         </header>
       </div>
     );

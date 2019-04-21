@@ -1,0 +1,36 @@
+{
+  "name": "serial-listener",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": ">=16.7.0-alpha.2",
+    "react-dom": ">=16.7.0-alpha.2",
+    "react-scripts": ">=2.1.2",
+    "rxjs": ">=6.3.3"
+  },
+  "homepage": "./",
+  "main": "src/electron-starter.js",
+  "scripts": {
+    "start": "nf start -p 3000",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "electron-start": "node src/electron-wait",
+    "react-start": "react-scripts start"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "electron": ">=4.0.0",
+    "electron-log": ">=2.2.17",
+    "foreman": ">=3.0.1"
+  }
+}

@@ -12,8 +12,8 @@ def portLoop(listener):
     async def portLoopInner(ws, path):
         try:
             while True:
-                message = await listener()
-                await ws.send(json.dumps(message))
+                async for message in listener():
+                    await ws.send(json.dumps(message))
         except e:
             print('ERROR')
             print(e)
@@ -30,7 +30,7 @@ def makeListeners(connections):
                     if state[dev][key] != val:
                         state[dev][key] = val
                         if val:
-                            return {"dev": dev, "sig": key, "time": time.time()}
+                            yield {"dev": dev, "sig": key, "time": time.time()}
             await asyncio.sleep(0.01)
     return listenState
 
